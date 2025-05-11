@@ -16,6 +16,7 @@ class Subcategory(models.Model):
 class Service(models.Model):
     name = models.CharField(max_length=255)
     subcategory = models.ForeignKey(Subcategory, on_delete=models.CASCADE, related_name='services')
+    description = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return self.name
